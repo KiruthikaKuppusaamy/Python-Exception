@@ -1,0 +1,135 @@
+************************************************************* Syntax Error (Compile time Error) *************************************************************
+# 1. Missing Colon
+for i in range(5)
+    print (i)
+print("Welcome to Python Programming")
+
+_________________________________________________________
+output
+  File "/home/main.py", line 1
+    for i in range(5)
+                     ^
+SyntaxError: expected ':'
+_________________________________________________________
+
+
+# 2. Missing Bracket
+for i in range 5):
+    print (i)
+print("Welcome to Python Programming")
+_________________________________________________________
+output
+  File "/home/main.py", line 1
+    for i in range 5):
+                    ^
+SyntaxError: unmatched ')'
+_________________________________________________________
+
+
+# 3. Misspelt Keyword
+for i in range (3):
+    print (i)
+prnt("Welcome to Python Programming")
+_________________________________________________________
+output
+0
+1
+2
+Traceback (most recent call last):
+  File "/home/main.py", line 3, in <module>
+    prnt("Welcome to Python Programming")
+NameError: name 'prnt' is not defined. Did you mean: 'print'?
+_________________________________________________________
+
+
+# 4. Improperly named variable
+1no = 3
+for i in range (1no):
+    print (i)
+print("Welcome to Python Programming")
+_________________________________________________________
+output
+  File "/home/main.py", line 1
+    1no = 3
+    ^
+SyntaxError: invalid decimal literal
+_________________________________________________________
+
+
+# 5. Missing double quotes
+no = 3
+for i in range (no):
+    print (i)
+print(Welcome to Python Programming")
+_________________________________________________________
+output
+ File "/home/main.py", line 4
+    print(Welcome to Python Programming")
+                                       ^
+SyntaxError: unterminated string literal (detected at line 4)
+_________________________________________________________
+
+************************************************************* Run time Error *************************************************************
+# 1. Dividing an integer by zero
+no = 3
+print(no/0)
+_________________________________________________________
+output
+Traceback (most recent call last):
+  File "/home/main.py", line 3, in <module>
+    print(no/0)
+ZeroDivisionError: division by zero
+_________________________________________________________
+
+
+# 2. Accessing element out of range
+even_list = [2,4,6]
+print(even_list[0])
+print(even_list[3])
+_________________________________________________________
+output
+2
+Traceback (most recent call last):
+  File "/home/main.py", line 3, in <module>
+    print(even_list[3])
+IndexError: list index out of range
+_________________________________________________________
+
+
+
+# 3. Passing an argument not in a valid range
+even_list = [2,4,6]
+print(even_list[0])
+print(even_list[3])
+_________________________________________________________
+output
+2
+Traceback (most recent call last):
+  File "/home/main.py", line 3, in <module>
+    print(even_list[3])
+IndexError: list index out of range
+_________________________________________________________
+
+
+# 4. Attempting to convert an invalid string into a number
+age = 25
+name= "Ajay"
+print(age+name)
+_________________________________________________________
+output
+Traceback (most recent call last):
+  File "/home/main.py", line 3, in <module>
+    print(age+name)
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+_________________________________________________________
+
+************************************************************* Logical Error *************************************************************
+# 1. Logical Error - Program to print even numbers between 0 and 10
+for n in range(10):
+    if (n/2==0):
+        print(n)
+
+_________________________________________________________
+output
+0
+_________________________________________________________
