@@ -1,0 +1,121 @@
+# 1 : Catching Exceptions - try...except
+
+school_of_cs = ['CSE','IT','CSDS','AIDS','AIML']
+choice = int(input("Enter the size of the list : "))
+try:
+    for course in range(choice):
+        print(school_of_cs[course])
+except:
+    print("Index out of range")
+    
+___________________________________________________________________________
+output
+Enter the size of the list : 3
+CSE
+IT
+CSDS
+
+Enter the size of the list : 5
+CSE
+IT
+CSDS
+AIDS
+AIML
+
+Enter the size of the list : 6
+CSE
+IT
+CSDS
+AIDS
+AIML
+Index out of range
+___________________________________________________________________________
+
+
+# 2 : Catching Specific Exceptions
+# Accessing an element from the list and checking the divisibility with the user given no
+
+os = [2,4,5,8]                                               # list
+dividend = int(input("Enter the dividend to access :"))      # get the element index to access
+divisor = int(input("Enter the divisor to divide  :"))       # get the number to divide the list element  
+
+try:
+     remainder = nos[dividend] % divisor
+     print("Numerator   is :",nos[dividend])
+     print("Denominator is :",divisor)
+     if (remainder==0):
+         print("No. is Divisible")
+     else:
+         print("No. is not Divisible")
+         
+except ZeroDivisionError:
+    print("Denominator cannot be 0")
+    
+except IndexError:
+    print("Index Out of Bound")
+___________________________________________________________________________
+output
+
+Enter the dividend to access :3
+Enter the divisor to divide  :2
+Numerator   is : 8
+Denominator is : 2
+No. is Divisible
+
+Enter the dividend to access :3
+Enter the divisor to divide  :0
+Denominator cannot be 0
+
+Enter the dividend to access :4
+Enter the divisor to divide  :2
+Index Out of Bound
+___________________________________________________________________________
+
+
+# 3 : try with else clause
+# Print the exception if error occurs else alter data in the list  
+
+scl_of_cs = ['CSE','IT','CSDS','AIDS','AIML']
+index = int(input("Enter the index to alter : "))
+
+try:
+   scl_of_cs[index]='B.E '+scl_of_cs[index]
+except :
+   print("Index out of range")
+else:
+   print(scl_of_cs)
+
+___________________________________________________________________________
+output
+
+Enter the index to alter : 4
+['CSE', 'IT', 'CSDS', 'AIDS', 'B.E AIML']
+
+Enter the index to alter : 5
+Index out of range
+___________________________________________________________________________
+
+
+# 4 : raise an exception
+uname = input("Enter the user name : ")
+if len(uname)<=8 :
+     raise Exception("User name should be greater than or equal to 8 but it is only {}".format(len(uname)))
+   # raise Exception(f"User name should be greater than or equal to 8 but it is only {len(uname)}")  
+else:
+    print("User Name is ",uname,". Is it Confirm? ")
+  # print(f"User Name is {uname}. Is it Confirm? ")
+  
+___________________________________________________________________________
+output
+Enter the user name : Kiruthika
+User Name is  Kiruthika . Is it Confirm? 
+
+
+Enter the user name : erode
+Traceback (most recent call last):
+  File "/home/main.py", line 3, in <module>
+    raise Exception("User name should be greater than or equal to 8 but it is only {}".format(len(uname)))
+Exception: User name should be greater than or equal to 8 but it is only 5
+___________________________________________________________________________
+
+
